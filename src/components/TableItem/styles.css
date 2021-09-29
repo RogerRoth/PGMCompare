@@ -1,0 +1,31 @@
+table.table-item {
+    
+    background-color: #75e6dba1;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 50, 0.336);
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table td {
+
+    width: 4.5px;
+    height: 4.5px;
+    vertical-align: middle;
+    background-color: #fff;
+}
+
+.c0 {
+    background-color: #000000;
+    color: #D4F1F4;
+}
+
+.c150 {
+    background-color: #ff0000;
+    color: #D4F1F4;
+}
+
+.c50 {
+    background-color: #0077ff;
+    color: #D4F1F4;
+}
