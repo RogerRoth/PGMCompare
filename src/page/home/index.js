@@ -244,7 +244,7 @@ function App() {
               {compareDataResult.finalResult ? <span className="tag is-success is-large">Imagem Igual</span> : <span className="tag is-danger is-large">Imagem Diferente</span>}<br/>
 
               <strong>Tolerâcia </strong>{sliderValue}%<br/>
-              <strong>Semelhança </strong>{compareDataResult.porcentagemIgualdade}<br/>
+              <strong>Semelhança </strong>{compareDataResult.porcentagemIgualdade}%<br/>
               <strong>Total de Pixels </strong>{compareDataResult.totalPx}
             </p>
 
