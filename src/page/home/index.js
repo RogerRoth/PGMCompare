@@ -184,7 +184,7 @@ function App() {
         <strong>3) </strong>selecione um arquivo que será comparado.
       </div>
       <div class="block subtitle is-5">
-        <strong>4) </strong>aplique um dos filtros <em>Igualdade</em>, <em>Diferença</em> ou <em>Alt</em>.
+        <strong>4) </strong>aplique um dos filtros <em>Igualdade</em>, <em>Diferença</em> ou <em>Alt</em> (<span class="tag is-info"></span> pixel adicionado, <span class="tag is-danger"></span> pixel removido, <span class="tag is-black"></span> pixel igual).
       </div>
       </div>
 
