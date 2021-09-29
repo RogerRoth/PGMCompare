@@ -175,13 +175,13 @@ function App() {
         <strong>Como funciona:</strong>
       </div>
       <div class="block subtitle is-5 ">
-        <strong>1) </strong>defina a tolerância.
+        <strong>1) </strong>defina a tolerância, no qual um arquivo é considerado semelhante ao outro.
       </div>
       <div class="block subtitle is-5">
-        <strong>2) </strong>selecione um arquivo de referência.
+        <strong>2) </strong>selecione o arquivo de referência.
       </div>
       <div class="block subtitle is-5">
-        <strong>3) </strong>selecione um arquivo que será comparado.
+        <strong>3) </strong>selecione o arquivo que será comparado com o de referência.
       </div>
       <div class="block subtitle is-5">
         <strong>4) </strong>aplique um dos filtros <em>Igualdade</em>, <em>Diferença</em> ou <em>Alt</em> (<span class="tag is-info"></span> pixel adicionado, <span class="tag is-danger"></span> pixel removido, <span class="tag is-black"></span> pixel igual).
