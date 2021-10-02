@@ -10,7 +10,7 @@ function App() {
   const [previewCompared, setPreviewCompared] = useState();
   const [compareDataResult, setCompareDataResult] = useState();
 
-  const [sliderValue, setSliderValue] = useState(15);
+  const [sliderValue, setSliderValue] = useState(10);
 
   const handleFile = (e) => {
     let content = e.target.result;
