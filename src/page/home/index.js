@@ -33,6 +33,10 @@ function App() {
   }
   
   const handleChangeFile = (file, image) => {
+    if(!file){
+      
+      return
+    }
     let fileData = new FileReader();
     fileData.id = image
     fileData.onloadend = handleFile;
@@ -120,25 +124,25 @@ function App() {
     const tolerancia = sliderValue;
 
     const totalPx = previewImg.data.length;
-    const blackPxOrig = previewImg.data.filter(px => px ==='0').length;
-    const blackPxComp = previewImgB.data.filter(px => px ==='0').length;
+    //const blackPxOrig = previewImg.data.filter(px => px ==='0').length;
+    //const blackPxComp = previewImgB.data.filter(px => px ==='0').length;
 
-    const porcentagemIgualdade = (blackPxOrig/blackPxComp) * 100
+    //const porcentagemIgualdade = (blackPxOrig/blackPxComp) * 100
 
-    /*
-    console.log('Black Orig', blackPxOrig);
-    console.log('Black Comp', blackPxComp);
-    console.log('Total ', totalPx);
-    console.log('Tolerancia ', tolerancia);
-    console.log('Semelhança Black', porcentagemIgualdade, '%');*/
 
-    let diferenca = 0;
+    const refData = previewImg.data;
+    const compData = previewImgB.data;
 
-    if(porcentagemIgualdade <= 100){
-      diferenca = 100 - porcentagemIgualdade;
-    } else {
-      diferenca = porcentagemIgualdade - 100;
+    let pxMesmaPos = 0;
+
+    for(let i=0; i<refData.length; i++){
+      if(refData[i] === compData[i]){
+        pxMesmaPos++;
+      }
     }
+
+    const semelhanca = (pxMesmaPos/totalPx)*100;
+    let diferenca = (1-(pxMesmaPos/totalPx))*100;
 
     let finalResult = false;
 
@@ -148,10 +152,9 @@ function App() {
 
     const compareDataResult = {
       totalPx,
-      blackPxOrig,
-      blackPxComp,
-      porcentagemIgualdade,
+      semelhanca,
       diferenca,
+      tolerancia,
       finalResult
     }
     setCompareDataResult(compareDataResult)
@@ -243,8 +246,8 @@ function App() {
             <p>
               {compareDataResult.finalResult ? <span className="tag is-success is-large">Imagem Igual</span> : <span className="tag is-danger is-large">Imagem Diferente</span>}<br/>
 
-              <strong>Tolerâcia </strong>{sliderValue}%<br/>
-              <strong>Semelhança </strong>{compareDataResult.porcentagemIgualdade}%<br/>
+              <strong>Tolerâcia </strong>{compareDataResult.tolerancia}%<br/>
+              <strong>Semelhança </strong>{compareDataResult.semelhanca}%<br/>
               <strong>Total de Pixels </strong>{compareDataResult.totalPx}
             </p>
 
